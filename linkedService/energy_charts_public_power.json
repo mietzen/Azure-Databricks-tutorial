@@ -1,9 +1,7 @@
 {
 	"name": "energy_charts_public_power",
 	"properties": {
-		"annotations": [
-			"public_power"
-		],
+		"annotations": [],
 		"type": "RestService",
 		"typeProperties": {
 			"url": "https://api.energy-charts.info/",
