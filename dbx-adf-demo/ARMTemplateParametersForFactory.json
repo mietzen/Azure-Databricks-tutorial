@@ -1,0 +1,18 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "dbx-adf-demo"
+		},
+		"Raw_accountKey": {
+			"value": ""
+		},
+		"Raw_properties_typeProperties_url": {
+			"value": "https://dbxstorca647d.dfs.core.windows.net/"
+		},
+		"energy_charts_public_power_properties_typeProperties_url": {
+			"value": "https://api.energy-charts.info/"
+		}
+	}
+}
