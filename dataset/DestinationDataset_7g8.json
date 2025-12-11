@@ -1,0 +1,20 @@
+{
+	"name": "DestinationDataset_7g8",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "Raw",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Json",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "public_power",
+				"folderPath": "energy_charts",
+				"fileSystem": "raw"
+			}
+		},
+		"schema": {}
+	}
+}
