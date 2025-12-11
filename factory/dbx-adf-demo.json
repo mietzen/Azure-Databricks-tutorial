@@ -1,0 +1,9 @@
+{
+	"name": "dbx-adf-demo",
+	"location": "westeurope",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "55d780c4-f63a-4b59-8f53-7cdc1326ba0a",
+		"tenantId": "d7e0687f-7aec-4154-919e-416b8bd14f65"
+	}
+}
