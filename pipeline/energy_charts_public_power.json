@@ -1,0 +1,105 @@
+{
+	"name": "energy_charts_public_power",
+	"properties": {
+		"activities": [
+			{
+				"name": "Copy_rrg",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [
+					{
+						"name": "Source",
+						"value": "public_power?country=de"
+					},
+					{
+						"name": "Destination",
+						"value": "raw/energy_charts/public_power"
+					}
+				],
+				"typeProperties": {
+					"source": {
+						"type": "RestSource",
+						"httpRequestTimeout": "00:01:40",
+						"requestInterval": "00.00:00:00.010",
+						"requestMethod": "GET"
+					},
+					"sink": {
+						"type": "JsonSink",
+						"storeSettings": {
+							"type": "AzureBlobFSWriteSettings",
+							"metadata": [
+								{
+									"name": "type",
+									"value": "power"
+								}
+							]
+						},
+						"formatSettings": {
+							"type": "JsonWriteSettings",
+							"filePattern": "setOfObjects"
+						}
+					},
+					"enableStaging": false,
+					"validateDataConsistency": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"path": "$['unix_seconds'][0]"
+								},
+								"sink": {
+									"path": "$['unix_seconds'][0]"
+								}
+							},
+							{
+								"source": {
+									"path": "$['production_types'][0]['name']"
+								},
+								"sink": {
+									"path": "$['production_types'][0]['name']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['production_types'][0]['data'][0]"
+								},
+								"sink": {
+									"path": "$['production_types'][0]['data'][0]"
+								}
+							},
+							{
+								"source": {
+									"path": "$['deprecated']"
+								},
+								"sink": {
+									"path": "$['deprecated']"
+								}
+							}
+						]
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "SourceDataset_rrg",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "DestinationDataset_rrg",
+						"type": "DatasetReference"
+					}
+				]
+			}
+		],
+		"annotations": []
+	}
+}
