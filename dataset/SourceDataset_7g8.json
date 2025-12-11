@@ -1,0 +1,15 @@
+{
+	"name": "SourceDataset_7g8",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "energy_charts_public_power",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "RestResource",
+		"typeProperties": {
+			"relativeUrl": "/public_power?country=de"
+		},
+		"schema": []
+	}
+}
