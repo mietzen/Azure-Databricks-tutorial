@@ -48,10 +48,10 @@
 						"mappings": [
 							{
 								"source": {
-									"path": "$['unix_seconds'][0]"
+									"path": "$['unix_seconds']"
 								},
 								"sink": {
-									"path": "$['unix_seconds'][0]"
+									"path": "$['unix_seconds']"
 								}
 							},
 							{
@@ -68,14 +68,6 @@
 								},
 								"sink": {
 									"path": "$['production_types'][0]['data'][0]"
-								}
-							},
-							{
-								"source": {
-									"path": "$['deprecated']"
-								},
-								"sink": {
-									"path": "$['deprecated']"
 								}
 							}
 						]
