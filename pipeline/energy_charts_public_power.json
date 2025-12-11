@@ -56,18 +56,18 @@
 							},
 							{
 								"source": {
-									"path": "$['production_types'][0]['name']"
+									"path": "$['production_types']['name']"
 								},
 								"sink": {
-									"path": "$['production_types'][0]['name']"
+									"path": "$['production_types']['name']"
 								}
 							},
 							{
 								"source": {
-									"path": "$['production_types'][0]['data'][0]"
+									"path": "$['production_types']['data']"
 								},
 								"sink": {
-									"path": "$['production_types'][0]['data'][0]"
+									"path": "$['production_types']['data']"
 								}
 							}
 						]
